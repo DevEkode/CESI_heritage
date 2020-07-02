@@ -37,11 +37,10 @@ public class Client {
     @Override
     public String toString() {
         String result = "";
-        result += "Client "+ numero + " - " + nom ;
+        result += "Client "+ numero + " - " + nom +"\n";
         if(this.comptes.isEmpty()){
             result += " pas de comptes rattaché à ce client";
         }else{
-            result += "\n";
             for(Compte c : this.comptes){
                 result += "Compte n°"+c.getNumero()+" - solde : "+c.getSolde()+"\n";
             }
