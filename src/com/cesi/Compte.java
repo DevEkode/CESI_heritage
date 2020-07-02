@@ -22,6 +22,10 @@ public class Compte {
         return solde;
     }
 
+    public void credit(float montant){
+        this.solde += montant;
+    }
+
     @Override
     public String toString() {
         return "Compte "+this.numero+" - client "+this.client.getNom()+" - Solde : "+this.solde;

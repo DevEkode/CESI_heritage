@@ -4,20 +4,17 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        Client client1 = new Client(1,"Martin");
-        Client client2 = new Client(2,"Dupont");
+        Client c1 = new Client("Martin",1);
+        System.out.println(c1);
 
-        // Affiche le client1 et 2
-        System.out.println(client1);
-        System.out.println(client2);
+        Compte com1 = new Compte(10,c1);
+        Compte com2 = new Compte(20,c1);
 
-        // Modifie le nom du client
-        client2.setNom("Pichon");
-        System.out.println(client2);
+        c1.addCompte(com1);
+        c1.addCompte(com2);
 
-        Compte com1 = new Compte(10,client1);
-        Compte com2 = new Compte(20,client2);
-        System.out.println(com1);
-        System.out.println(com2);
+        System.out.println(c1);
+        com1.credit(500);
+        System.out.println(c1);
     }
 }

@@ -1,13 +1,17 @@
 package com.cesi;
 
+import java.util.ArrayList;
+
 public class Client {
 
     private long numero;
     private String nom;
+    private ArrayList<Compte> comptes;
 
-    public Client(long numero, String nom) {
+    public Client(String nom,long numero) {
         this.numero = numero;
         this.nom = nom;
+        this.comptes = new ArrayList<>();
     }
 
     public long getNumero() {
@@ -22,8 +26,27 @@ public class Client {
         this.nom = nom;
     }
 
+    public void addCompte(Compte c){
+        this.comptes.add(c);
+    }
+
+    public ArrayList<Compte> getComptes() {
+        return comptes;
+    }
+
     @Override
     public String toString() {
-        return "Client "+ numero + " - " + nom ;
+        String result = "";
+        result += "Client "+ numero + " - " + nom ;
+        if(this.comptes.isEmpty()){
+            result += " pas de comptes rattaché à ce client";
+        }else{
+            result += "\n";
+            for(Compte c : this.comptes){
+                result += "Compte n°"+c.getNumero()+" - solde : "+c.getSolde()+"\n";
+            }
+        }
+
+        return result;
     }
 }
