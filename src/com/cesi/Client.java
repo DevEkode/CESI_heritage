@@ -24,9 +24,6 @@ public class Client {
 
     @Override
     public String toString() {
-        return "Client{" +
-                "numero=" + numero +
-                ", nom='" + nom + '\'' +
-                '}';
+        return "Client "+ numero + " - " + nom ;
     }
 }
