@@ -14,5 +14,10 @@ public class Main {
         // Modifie le nom du client
         client2.setNom("Pichon");
         System.out.println(client2);
+
+        Compte com1 = new Compte(10,client1);
+        Compte com2 = new Compte(20,client2);
+        System.out.println(com1);
+        System.out.println(com2);
     }
 }
