@@ -12,7 +12,7 @@ public class CompteEpargne extends Compte{
         this.montantTransfert = montantTransfert;
     }
 
-    // Transfert d'un montant du compte épargne vers le  compte courant
+    // Transfère d'un montant du compte épargne vers le  compte courant
     public void transfer(){
 
         // Vérification si les fonds sont suffisants
