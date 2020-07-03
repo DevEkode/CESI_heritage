@@ -5,7 +5,11 @@ public class Compte {
     private Client client;
     private float solde= 50;
 
-    // Constructeur
+    /**
+     * Constructeur de la classe Compte
+     * @param numero numéro du compte
+     * @param c Client du compte
+     */
     public Compte(long numero, Client c){
         this.numero = numero;
         this.client = c;
@@ -23,7 +27,11 @@ public class Compte {
         return solde;
     }
 
-    // Débite le compte Epargne SI les fonds sont suffisants
+    /**
+     * Effectue un débit du compte si les fonds sont suffisants
+     * @param montant montant à débiter du compte
+     * @return montant débité (-1 si fond insuffisants)
+     */
     public float debit(float montant) {
         float res = this.solde - montant;
         if (res >= 0) {
@@ -34,7 +42,10 @@ public class Compte {
         return res;
     }
 
-    // Crédite le(s) compte(s)
+    /**
+     * Crédite le compte
+     * @param montant montant à créditer
+     */
     public void credit(float montant){
             this.solde += montant;
     }

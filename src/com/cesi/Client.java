@@ -8,7 +8,11 @@ public class Client {
     private String nom;
     private ArrayList<Compte> comptes;
 
-    // Constructeur
+    /**
+     * Constructeur de la classe Client
+     * @param nom nom du client
+     * @param numero numéro du client
+     */
     public Client(String nom,long numero) {
         this.numero = numero;
         this.nom = nom;
@@ -27,10 +31,18 @@ public class Client {
         this.nom = nom;
     }
 
+    /**
+     * Ajoute un compte au client
+     * @param c compte à ajouter
+     */
     public void addCompte(Compte c){
         this.comptes.add(c);
     }
 
+    /**
+     * Récupère les comptes du client
+     * @return Liste des comptes
+     */
     public ArrayList<Compte> getComptes() {
         return comptes;
     }
