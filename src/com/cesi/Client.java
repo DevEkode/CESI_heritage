@@ -8,6 +8,7 @@ public class Client {
     private String nom;
     private ArrayList<Compte> comptes;
 
+    // Constructeur
     public Client(String nom,long numero) {
         this.numero = numero;
         this.nom = nom;
@@ -38,6 +39,7 @@ public class Client {
     public String toString() {
         String result = "";
         result += "Client "+ numero + " - " + nom +"\n";
+
         if(this.comptes.isEmpty()){
             result += " pas de comptes rattaché à ce client";
         }else{

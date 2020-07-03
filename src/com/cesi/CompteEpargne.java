@@ -5,17 +5,23 @@ public class CompteEpargne extends Compte{
     private CompteCourant compteTransfert;
     private float montantTransfert;
 
-    // Construct
+    // Constructeur
     public CompteEpargne(long numero, Client c, CompteCourant compteTransfert, float montantTransfert) {
         super(numero, c);
         this.compteTransfert = compteTransfert;
         this.montantTransfert = montantTransfert;
     }
 
-    // Transfer montant compte épargne au compte courant
+    // Transfert d'un montant du compte épargne vers le  compte courant
     public void transfer(){
-        compteTransfert.credit(getMontantTransfert());
-        this.debit(getMontantTransfert());
+
+        // Vérification si les fonds sont suffisants
+        if (this.debit(getMontantTransfert()) > -1) {
+            compteTransfert.credit(getMontantTransfert());
+            System.out.println("Transfert effectué");
+        }else{
+            System.err.println("Transfert impossible");
+        }
     }
 
     public CompteCourant getCompteTransfert() {

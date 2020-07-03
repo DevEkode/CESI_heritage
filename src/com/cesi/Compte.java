@@ -3,8 +3,9 @@ package com.cesi;
 public class Compte {
     private long numero;
     private Client client;
-    private float solde;
+    private float solde= 50;
 
+    // Constructeur
     public Compte(long numero, Client c){
         this.numero = numero;
         this.client = c;
@@ -22,12 +23,20 @@ public class Compte {
         return solde;
     }
 
-    public void credit(float montant){
-        this.solde += montant;
+    // Débite le compte Epargne SI les fonds sont suffisants
+    public float debit(float montant) {
+        float res = this.solde - montant;
+        if (res >= 0) {
+            this.solde -= montant;
+        }else{
+            res = -1;
+        }
+        return res;
     }
 
-    public void debit(float montant){
-        this.solde -= montant;
+    // Crédite le(s) compte(s)
+    public void credit(float montant){
+            this.solde += montant;
     }
 
     @Override

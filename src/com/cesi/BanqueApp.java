@@ -30,11 +30,15 @@ public class BanqueApp {
             // On ajoute un compte épargne au client
             CompteEpargne compteEpargne = new CompteEpargne(c.getNumero()*1000+2,c,compteCourant,50);
             c.addCompte(compteEpargne);
+
+            // On transfert une somme du compte epargen au compte courant (si c'est faisable)
+            compteEpargne.transfer();
         }
 
         // On liste les clients de la banque
         for(Client c : clients){
             System.out.println(c);
+
         }
     }
 }
